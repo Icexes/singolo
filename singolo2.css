@@ -15,7 +15,7 @@ body {
     border-bottom: 6px solid #323756;
     width: 1020px;
     margin: 0 auto;
-    padding: 70px 40px 0 40px;
+    padding: 70px 40px 46.5px 40px;
 }
 .portfolio__caption {
     color: #666d89;
@@ -60,7 +60,7 @@ color: #767e9e;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom:46.5px;
+    
     max-height: 621px;
     overflow: hidden;
 
@@ -73,11 +73,73 @@ color: #767e9e;
 }
 
 .about-us {
-    background-color: #2d303a;
-    border-bottom: 6px solid #323756;
+    background-color: #f2f2f2;
+    border-bottom: 6px solid #ffffff;
+   
     width: 1020px;
     margin: 0 auto;
-    padding: 0 40px 0 40px;
+    padding: 72px 40px 62px 40px;
 }
 
+.about-us__caption {
+    color: #666d89;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 17.86px;
+
+}
+
+.about-us__description {
+    margin-top:25px;
+    color: #767e9e;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+
+}
+
+.employees {
+    margin-top:44px;
+    height:448px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.employee-card {
+    max-width:300px;
+}
+.employee-card:nth-child(2) .employee-card__photo img {    /* Костыль */
+    margin-left:-1px;
+}
+
+
+.employee-card__name {
+    margin-top:14px;
+    color: #666d89;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 17.86px;
+}
+
+
+.employee-card__about {
+    margin-top:11px;
+    color: #767e9e;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21.56px;
+
+}
+
+
+.employee-card:nth-child(1) .social-links {   /* Костыль */
+    margin-left:1px;
+}
+
+.social-links {
+    margin-top:22px;
+}
+.social-links img {
+    margin-right:4px;
+}
 

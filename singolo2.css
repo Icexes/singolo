@@ -20,12 +20,13 @@ body {
 .portfolio__caption {
     color: #666d89;
     font-weight: 900;
-    line-height: 17.86px;
+    line-height: 21px;
     font-size: 30px;
+    letter-spacing: 0.2px;
 
 }
 .portfolio__description {
-    padding-top: 28px;
+    padding-top: 24px;
     font-weight: 300;
     color: #767e9e;
     line-height: 30px;

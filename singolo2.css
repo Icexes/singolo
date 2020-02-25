@@ -1,0 +1,83 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Lato, sans-serif;
+}
+
+.portfolio {
+    background-color: #2d303a;
+    border-bottom: 6px solid #323756;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 70px 40px 0 40px;
+}
+.portfolio__caption {
+    color: #666d89;
+    font-weight: 900;
+    line-height: 17.86px;
+    font-size: 30px;
+
+}
+.portfolio__description {
+    padding-top: 28px;
+    font-weight: 300;
+    color: #767e9e;
+    line-height: 30px;
+    font-size:18px;
+    
+    
+}
+.portfolio__navigation {
+    margin-left: 1px;
+    margin-top: 9px;
+    display:flex;
+    list-style:none;
+    justify-content: flex-start;
+    margin-bottom:19px;  /* ПЕРЕНЕСТИ */
+   
+}
+.portfolio__navigation-item {
+    
+line-height: 20px;
+border: 1.5px solid #767e9e;
+border-radius: 5px;
+margin-right: 10px;
+text-align: center;
+padding: 0 5.9px;
+font-weight: 300;
+font-size: 12px;
+color: #767e9e;
+}
+
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom:46.5px;
+    max-height: 621px;
+    overflow: hidden;
+
+}
+
+.gallery__img {
+    width: 220px;
+    height: 187px;
+    margin-bottom:20px;
+}
+
+.about-us {
+    background-color: #2d303a;
+    border-bottom: 6px solid #323756;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 0 40px 0 40px;
+}
+
+

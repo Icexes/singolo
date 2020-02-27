@@ -31,29 +31,41 @@ body {
     color: #767e9e;
     line-height: 30px;
     font-size:18px;
-    
+    letter-spacing: -0.22px;
     
 }
-.portfolio__navigation {
+.filter {
     margin-left: 1px;
     margin-top: 9px;
     display:flex;
     list-style:none;
     justify-content: flex-start;
-    margin-bottom:19px;  /* ПЕРЕНЕСТИ */
+    margin-bottom:20px;  /* ПЕРЕНЕСТИ */
    
 }
-.portfolio__navigation-item {
+.filter-item {
     
 line-height: 20px;
-border: 1.5px solid #767e9e;
+border: 1px solid #767e9e;
 border-radius: 5px;
 margin-right: 10px;
 text-align: center;
-padding: 0 5.9px;
-font-weight: 300;
+padding: 0 5.8px;
+font-weight: 400;
 font-size: 12px;
 color: #767e9e;
+}
+.filter-item:first-child {
+    letter-spacing: 0.38px;
+    
+    border-color: #fff;
+    color: #fff;
+}
+.filter-item:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    border-color: #fff;
+    color: #fff;
 }
 
 
@@ -91,16 +103,18 @@ color: #767e9e;
 }
 
 .about-us__description {
-    margin-top:25px;
+    margin-top:26px;
     color: #767e9e;
     font-size: 18px;
     font-weight: 300;
     line-height: 30px;
+    letter-spacing: -0.24px;
+     text-align: justify;
 
 }
 
 .employees {
-    margin-top:44px;
+    margin-top:43px;
     height:448px;
     display: flex;
     justify-content: space-between;
@@ -109,8 +123,20 @@ color: #767e9e;
 .employee-card {
     max-width:300px;
 }
+.employee-card:nth-child(1) .employee-card__about {    /* Костыль */
+    letter-spacing: -0.149px;
+}
+
 .employee-card:nth-child(2) .employee-card__photo img {    /* Костыль */
     margin-left:-1px;
+}
+
+.employee-card:nth-child(2)  .employee-card__name {   /* Костыль */
+    letter-spacing: -0.2px;
+}
+
+.employee-card:nth-child(3)  .employee-card__name {   /* Костыль */
+    letter-spacing: 0.1px;
 }
 
 
@@ -120,6 +146,7 @@ color: #767e9e;
     font-weight: 900;
     font-size: 18px;
     line-height: 17.86px;
+    
 }
 
 
@@ -128,8 +155,9 @@ color: #767e9e;
     color: #767e9e;
     font-size: 12px;
     font-weight: 400;
-    line-height: 21.56px;
-
+    line-height: 20.7px;
+    text-align: justify;
+    
 }
 
 
@@ -138,9 +166,13 @@ color: #767e9e;
 }
 
 .social-links {
-    margin-top:22px;
+    margin-top:24px;
 }
 .social-links img {
     margin-right:4px;
+}
+
+.social-links img:hover {
+    opacity: 0.5;
 }
 

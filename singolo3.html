@@ -18,17 +18,20 @@
                 non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac
                 cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="contacts__info">
-                <form class="contact-form" method="POST">
-                    <input type="text" class="contact-form__name" placeholder="Name (Required)" name="name" required>
-                    <input type="email" class="contact-form__email" placeholder="Email (Required)" name="email" required>
+                <form class="contact-form" method="POST" action="#">
+                    <input type="text" class="contact-form__name" placeholder="Name (Required)" name="name"
+                        pattern="[A-Za-zА-Яа-яЁё]{3,}\s?([A-Za-zА-Яа-яЁё]{3,})?" required>
+                    <input type="email" class="contact-form__email" placeholder="Email (Required)" name="email"
+                        pattern="^[a-z0-9]{3,16}@[a-z]{3,6}\.[a-z]{2,4}$" required>
                     <input type="text" class="contact-form__subject" placeholder="Subject" name="Subject">
-                    <textarea  class="contact-form__details" placeholder="Describe your project in detail..."></textarea>
+                    <textarea class="contact-form__details" placeholder="Describe your project in detail..."></textarea>
                     <button class="contact-form__submit" type="submit">Submit</button>
                 </form>
                 <div class="contact-information">
                     <h3 class="contact-information__caption">Contact Information</h3>
                     <p class="contact-information__description">Quisque hendrerit purus dapibus, ornare nibh vitae,
-                        viver&shy; ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et
+                        viver&shy; ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc
+                        et
                         tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
                     </p>
 
@@ -43,10 +46,13 @@
         <div class="footer__content">
             <p class="footer__copyrights">&copy; Copyright 2013</p>
             <div class="social-links">
-                <a href="#"><img src="assets/images/socials/Facebook.png" alt="facebook" class="social-links__facebook"></a>
+                <a href="#"><img src="assets/images/socials/Facebook.png" alt="facebook"
+                        class="social-links__facebook"></a>
                 <a href="#"><img src="assets/images/socials/Google.png" alt="google" class="social-links__google"></a>
-                <a href="#"> <img src="assets/images/socials/Twitter.png" alt="twitter" class="social-links__twitter"></a>
-                <a href="#"> <img src="assets/images/socials/LinkedIn.png" alt="linkedin" class="social-links__linkedin"></a>
+                <a href="#"> <img src="assets/images/socials/Twitter.png" alt="twitter"
+                        class="social-links__twitter"></a>
+                <a href="#"> <img src="assets/images/socials/LinkedIn.png" alt="linkedin"
+                        class="social-links__linkedin"></a>
             </div>
         </div>
     </footer>

@@ -1,1 +1,1 @@
-# singolo
+# [singolo](https:/Icexes.github.io/singolo)

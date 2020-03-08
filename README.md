@@ -1,1 +1,1 @@
-# [singolo](https:/Icexes.github.io/singolo)
+# [singolo](https://Icexes.github.io/singolo)

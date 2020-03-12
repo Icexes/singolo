@@ -5,20 +5,28 @@
     margin: 0;
     padding: 0;
 }
-
-a {
-    text-decoration: none;
+html {
+    scroll-behavior: smooth;
 }
+
 
 body {
     font-family: Lato, sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+
 .logo__link:hover {
     opacity: 0.9;
     color: #f06c64;
 }
-
+.header {
+    /* position: sticky;
+    top:0; */
+}
 .header__content {
     display: flex;
     justify-content: space-between;
@@ -77,6 +85,10 @@ body {
 
 .desktop-menu__link {
     color: #fff;
+}
+
+.desktop-menu__link--active {
+    color: #f06c64;
 }
 
 .desktop-menu__link:hover {

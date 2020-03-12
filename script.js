@@ -94,6 +94,20 @@ portfolioFilter.addEventListener("click", function(event) {
 }
 )
 
+portfolioGallery.addEventListener("click", function(event) {
+    let images = portfolioGallery.querySelectorAll("img")
+    if (event.target.tagName=="IMG") {
+        for (let img of images) {
+            if (img.classList.contains("gallery__img--active")) {
+                img.classList.remove("gallery__img--active");
+                break;
+            }
+        }
+        event.target.classList.add("gallery__img--active");
+
+    }
+})
+
 
 
 

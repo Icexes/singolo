@@ -334,7 +334,9 @@ span.hours {
 .gallery__img--active {
  border: 5px solid #F06C64;
 }
-
+.gallery__img:hover {
+    cursor:pointer;
+}
 
 
 .about-us__content {

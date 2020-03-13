@@ -107,7 +107,7 @@ a {
 }
 
 .slider__content {
-    padding: 52px 40px 53px 42px;
+    padding: 52px 40px 58px 42px;
     margin: 0 auto;
     width: 1020px;
     display: flex;
@@ -127,11 +127,104 @@ a {
     transform: rotate(180deg);
 }
 
-.slider__phone-vertical {
+.phone-vertical {
     margin-top: 1px;
     margin-right: 18px;
     margin-left: -1px;
+    width:240px;
+    height:483px;
+    position: relative;   
 }
+
+.phone-vertical__base {
+    height:458px;
+    width:215px;
+    position:absolute;
+    top:0;
+    left:0;
+    background: url("./assets/images/phone-vertical-base.png");
+    z-index: 2;
+}
+
+.phone-vertical__screen {
+    width:188px;
+    height:333px;
+    background: url("./assets/images/phone-vertical-screen.png");
+    position: absolute;
+    top:65px;
+    left: 14px;
+    z-index:2;
+}
+.phone-vertical__shadow {
+    height:483px;
+    width:240px;
+    background: url("./assets/images/phone-vertical-shadow.png");
+    position: absolute;
+    right:0;
+    bottom:0;
+    z-index:1;
+}
+
+
+.phone-horizontal {
+    width:483px;
+    height:240px;
+    position: relative;
+}
+
+.phone-horizontal__base {
+    width:458px;
+    height:215px;
+    position:absolute;
+    top:0;
+    left:0;
+    background: url("./assets/images/phone-horizontal-base.png");
+    z-index: 2;
+}
+
+.phone-horizontal__screen {
+    height:188px;
+    width:333px;
+    background: url("./assets/images/phone-horizontal-screen.png");
+    position: absolute;
+    left:60px;
+    top: 14px;
+    z-index:2;
+}
+
+.phone-horizontal__shadow {
+    width:483px;
+    height:240px;
+    background: url("./assets/images/phone-horizontal-shadow.png");
+    position: absolute;
+    right:0;
+    bottom:0;
+    z-index:1;
+}
+
+
+.phone-horizontal__base:hover,
+.phone-vertical__base:hover {
+    cursor: pointer;
+}
+
+.slider__vertical-phone-screen {
+    width: 188px;
+    height:333px;
+    background: url("./assets/images/screen-vertical.png");
+    position: absolute;
+    top:65px;
+    left:14px;
+}
+.slider__horizontal-phone-screen {
+    height: 188px;
+    width:333px;
+    top:14px;
+    left:60px;
+    position: absolute;
+    background: url("./assets/images/screen-horizontal.png");
+}
+
 
 .services {
     background-color: #f2f2f2;
@@ -660,4 +753,8 @@ span.hours {
 
 .footer .social-links a:not(:last-of-type) {
     margin-right: 3.6px;
+}
+
+.display-none {
+    display:none;
 }

@@ -1,6 +1,6 @@
 let menuLinkList = document.querySelector(".desktop-menu__list")
 let menuLinks = menuLinkList.querySelectorAll(".desktop-menu__link")
-menuLinkList.addEventListener("click", function (event) {
+menuLinkList.addEventListener("click", event => {
     if (event.target.tagName == 'A') {
         for (let link of menuLinks) {
             if (link.classList.contains("desktop-menu__link--active")) {
@@ -89,7 +89,7 @@ for (let img of portfolioImages) {
     portfolioGallery.append(createElement("img", "gallery__img", img.src, img.alt))
 }
 
-portfolioFilter.addEventListener("click", function (event) {
+portfolioFilter.addEventListener("click", event => {
     let items = portfolioFilter.querySelectorAll(".filter__item")
     if (event.target.tagName == "LI") {
         if (event.target.classList.contains("filter__item--active")) {
@@ -118,7 +118,7 @@ portfolioFilter.addEventListener("click", function (event) {
 }
 )
 
-portfolioGallery.addEventListener("click", function (event) {
+portfolioGallery.addEventListener("click", event => {
     let images = portfolioGallery.querySelectorAll("img")
     if (event.target.tagName == "IMG") {
         for (let img of images) {
@@ -133,15 +133,22 @@ portfolioGallery.addEventListener("click", function (event) {
 })
 
 let sliderContent = document.querySelector(".slider__content")
-sliderContent.addEventListener("click", evt => {
+let slides = sliderContent.querySelectorAll(".slide")
+sliderContent.addEventListener("click", event => {
 
-    if (evt.target.closest(".phone-horizontal__base")) {
+    if (event.target.closest(".phone-horizontal__base")) {
         sliderContent.querySelector(".phone-horizontal__screen").classList.toggle("display-none")
         return;
     }
-    if (evt.target.closest(".phone-vertical__base")) {
+    if (event.target.closest(".phone-vertical__base")) {
         sliderContent.querySelector(".phone-vertical__screen").classList.toggle("display-none")
         return;
+    }
+
+    //For slider 
+
+    if (event.target.closest(".slider__arrow-right")) {
+
     }
 })
 

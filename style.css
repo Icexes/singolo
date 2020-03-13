@@ -116,7 +116,32 @@ a {
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
 }
+.slides {
+    width: 795px;
+    height: 484px;
+    overflow: hidden;
+    position:relative;
+   
+}
+.slide {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    position: absolute;
 
+}
+.slide-2 {
+    transform: translateX(-100%);
+}
+
+
+
+.slide-2__phone {
+    width:517px;
+    height:513px;
+    background:url("./assets/images/phone-slide-2.png");   
+    justify-self:center;;
+}
 .slider__arrow-left img:hover,
 .slider__arrow-right img:hover {
     opacity: 0.7;

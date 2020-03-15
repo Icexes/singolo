@@ -14,8 +14,7 @@ menuLinkList.addEventListener("click", event => {
 
 
 
-let portfolioImages = [
-    {
+let portfolioImages = [{
         "src": "assets/images/portfolio/img-1.png",
         "alt": "img 1"
     },
@@ -105,8 +104,7 @@ portfolioFilter.addEventListener("click", event => {
             for (let img of portfolioImages) {
                 portfolioGallery.append(createElement("img", "gallery__img", img.src, img.alt))
             }
-        }
-        else {
+        } else {
             portfolioGallery.innerHTML = "";
             for (let img of portfolioImages.slice().sort(makeRandomArr)) {
 
@@ -115,8 +113,7 @@ portfolioFilter.addEventListener("click", event => {
         }
         event.target.classList.add("filter__item--active")
     }
-}
-)
+})
 
 portfolioGallery.addEventListener("click", event => {
     let images = portfolioGallery.querySelectorAll("img")
@@ -134,6 +131,7 @@ portfolioGallery.addEventListener("click", event => {
 
 let sliderContent = document.querySelector(".slider__content")
 let slides = sliderContent.querySelectorAll(".slide")
+let arrows =  sliderContent.querySelectorAll(".arrow")
 sliderContent.addEventListener("click", event => {
 
     if (event.target.closest(".phone-horizontal__base")) {
@@ -147,20 +145,48 @@ sliderContent.addEventListener("click", event => {
 
     //For slider 
 
-    if (event.target.closest(".slider__arrow-right")) {
-
+     if (event.target.closest(".slider__arrow-right")) {  
+        slideToRight();
     }
+    if (event.target.closest(".slider__arrow-left")) {  
+       slideToLeft();
+    }
+
 })
 
 
 
 
 
+function slideToRight() {
+
+    showSlide(slideIndex += 1);
+    sliderContent.classList.toggle("background-blue")
+    sliderContent.classList.add("background-delay-visible")
+}
 
 
+function slideToLeft() {
+    showSlide(slideIndex -= 1); 
+    sliderContent.classList.toggle("background-blue");
+    sliderContent.classList.add("background-delay-visible")
+    
+}
+
+let slideIndex = 1;
+showSlide(slideIndex);
 
 
+function showSlide(n) {
+    let slides = document.querySelectorAll(".slide");
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+    Array.from(slides).map(el => el.classList.add("display-none"))
+    slides[slideIndex - 1].classList.remove("display-none");
 
 
-
-
+}

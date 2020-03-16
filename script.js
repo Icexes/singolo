@@ -15,53 +15,53 @@ menuLinkList.addEventListener("click", event => {
 
 
 let portfolioImages = [{
-        "src": "assets/images/portfolio/img-1.png",
-        "alt": "img 1"
-    },
-    {
-        "src": "assets/images/portfolio/img-2.png",
-        "alt": "img 2"
-    },
-    {
-        "src": "assets/images/portfolio/img-3.png",
-        "alt": "img 3"
-    },
-    {
-        "src": "assets/images/portfolio/img-4.png",
-        "alt": "img 4"
-    },
-    {
-        "src": "assets/images/portfolio/img-5.png",
-        "alt": "img 5"
-    },
-    {
-        "src": "assets/images/portfolio/img-6.png",
-        "alt": "img 6"
-    },
-    {
-        "src": "assets/images/portfolio/img-7.png",
-        "alt": "img 7"
-    },
-    {
-        "src": "assets/images/portfolio/img-8.png",
-        "alt": "img 8"
-    },
-    {
-        "src": "assets/images/portfolio/img-9.png",
-        "alt": "img 9"
-    },
-    {
-        "src": "assets/images/portfolio/img-10.png",
-        "alt": "img 10"
-    },
-    {
-        "src": "assets/images/portfolio/img-11.png",
-        "alt": "img 11"
-    },
-    {
-        "src": "assets/images/portfolio/img-12.png",
-        "alt": "img 12"
-    },
+    "src": "assets/images/portfolio/img-1.png",
+    "alt": "img 1"
+},
+{
+    "src": "assets/images/portfolio/img-2.png",
+    "alt": "img 2"
+},
+{
+    "src": "assets/images/portfolio/img-3.png",
+    "alt": "img 3"
+},
+{
+    "src": "assets/images/portfolio/img-4.png",
+    "alt": "img 4"
+},
+{
+    "src": "assets/images/portfolio/img-5.png",
+    "alt": "img 5"
+},
+{
+    "src": "assets/images/portfolio/img-6.png",
+    "alt": "img 6"
+},
+{
+    "src": "assets/images/portfolio/img-7.png",
+    "alt": "img 7"
+},
+{
+    "src": "assets/images/portfolio/img-8.png",
+    "alt": "img 8"
+},
+{
+    "src": "assets/images/portfolio/img-9.png",
+    "alt": "img 9"
+},
+{
+    "src": "assets/images/portfolio/img-10.png",
+    "alt": "img 10"
+},
+{
+    "src": "assets/images/portfolio/img-11.png",
+    "alt": "img 11"
+},
+{
+    "src": "assets/images/portfolio/img-12.png",
+    "alt": "img 12"
+},
 ]
 
 const makeRandomArr = (a, b) => Math.random() - 0.5;
@@ -95,22 +95,16 @@ portfolioFilter.addEventListener("click", event => {
             return;
         }
         for (let item of items) {
+
             item.classList.remove("filter__item--active");
 
         }
+        portfolioGallery.innerHTML = "";
+        for (let img of portfolioImages.slice().sort(makeRandomArr)) {
 
-        if (event.target.textContent == "All") {
-            portfolioGallery.innerHTML = "";
-            for (let img of portfolioImages) {
-                portfolioGallery.append(createElement("img", "gallery__img", img.src, img.alt))
-            }
-        } else {
-            portfolioGallery.innerHTML = "";
-            for (let img of portfolioImages.slice().sort(makeRandomArr)) {
-
-                portfolioGallery.append(createElement("img", "gallery__img", img.src, img.alt))
-            }
+            portfolioGallery.append(createElement("img", "gallery__img", img.src, img.alt))
         }
+
         event.target.classList.add("filter__item--active")
     }
 })
@@ -131,7 +125,7 @@ portfolioGallery.addEventListener("click", event => {
 
 let sliderContent = document.querySelector(".slider__content")
 let slides = sliderContent.querySelectorAll(".slide")
-let arrows =  sliderContent.querySelectorAll(".arrow")
+let arrows = sliderContent.querySelectorAll(".arrow")
 sliderContent.addEventListener("click", event => {
 
     if (event.target.closest(".phone-horizontal__base")) {
@@ -145,48 +139,56 @@ sliderContent.addEventListener("click", event => {
 
     //For slider 
 
-     if (event.target.closest(".slider__arrow-right")) {  
-        slideToRight();
+    if (event.target.closest(".slider__arrow-right")) {
+        moveSlide(1);
     }
-    if (event.target.closest(".slider__arrow-left")) {  
-       slideToLeft();
+    if (event.target.closest(".slider__arrow-left")) {
+        moveSlide(-1);
     }
 
 })
 
-
-
-
-
-function slideToRight() {
-
-    showSlide(slideIndex += 1);
-    sliderContent.classList.toggle("background-blue")
+const moveSlide = key => {
+    key == 1 ? showSlide(slideIndex += 1) : showSlide(slideIndex -= 1);
+    sliderContent.classList.toggle("background-blue");
     sliderContent.classList.add("background-delay-visible")
 }
 
-
-function slideToLeft() {
-    showSlide(slideIndex -= 1); 
-    sliderContent.classList.toggle("background-blue");
-    sliderContent.classList.add("background-delay-visible")
-    
+const showSlide = position => {
+    let slides = document.querySelectorAll(".slide");
+    if (position > slides.length) {
+        slideIndex = 1;
+    }
+    if (position < 1) {
+        slideIndex = slides.length;
+    }
+    Array.from(slides).map(el => el.classList.add("display-none"))
+    slides[slideIndex - 1].classList.remove("display-none");
 }
 
 let slideIndex = 1;
 showSlide(slideIndex);
 
 
-function showSlide(n) {
-    let slides = document.querySelectorAll(".slide");
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-    Array.from(slides).map(el => el.classList.add("display-none"))
-    slides[slideIndex - 1].classList.remove("display-none");
 
+let popup = document.querySelector(".popup")
+let contactForm = document.querySelector(".contact-form")
+let contactFormSubmit = contactForm.querySelector(".contact-form__submit");
+let requiredFields = Array.from(contactForm.querySelectorAll("input[required]"))
+const validateField = elem => elem.checkValidity();
+contactFormSubmit.addEventListener("click", event => {
+    if (requiredFields.every(validateField)) {
+        event.preventDefault()
+        let subject = contactForm.querySelector(".contact-form__subject").value.trim() == '' ? 'Без темы' : "Тема:<br>" + contactForm.querySelector(".contact-form__subject").value.trim()
+        let details = contactForm.querySelector(".contact-form__details").value.trim() == '' ? 'Без описания' : 'Описание:<br>' + contactForm.querySelector(".contact-form__details").value.trim()
+        popup.classList.toggle("display-none")
+        popup.querySelector(".popup__subject").innerHTML = subject;
+        popup.querySelector(".popup__details").innerHTML = details;
+        let submit = popup.querySelector(".popup__submit");
+        submit.addEventListener("click", evt => {
+            evt.preventDefault;
+            popup.classList.add("display-none")
+        })
+    }
+})
 
-}

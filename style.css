@@ -26,8 +26,9 @@ a {
 }
 
 .header {
-    /* position: sticky;
-    top:0; */
+    position: sticky;
+    top:0;
+    z-index: 5;
 }
 
 .header__content {
@@ -589,7 +590,7 @@ span.hours {
 }
 
 
-.contacts {}
+
 
 
 .contacts__content {
@@ -804,9 +805,7 @@ span.hours {
     margin-right: 3.6px;
 }
 
-.display-none {
-    display: none;
-}
+
 
 .background-blue {
     background-color: #648BF0;
@@ -816,4 +815,72 @@ span.hours {
 .background-delay-visible {
     transition-timing-function: linear;
     transition-duration: 0.5s;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(175, 191, 199, 0.8);
+    z-index: 3;
+    
+}
+.popup__content { 
+    padding:10px 10px;
+    max-width: 670px;
+    max-height: 600px;
+    min-height: 180px;
+    border-radius: 5%;
+    background-color:#fff;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* .visability-hidden {
+    visibility: hidden;
+    width:0;
+    height:0;
+} */
+
+.popup__subject {
+    margin-top: 10px;
+    max-height: 55px;
+    overflow: hidden;
+    word-wrap: wrap;
+    text-overflow: ellipsis;
+    text-align: justify;
+}
+
+
+.popup__details {
+    margin-top: 10px;
+    max-height: 192px;
+    overflow: hidden;
+    word-wrap: wrap;
+    text-overflow: ellipsis;
+    text-align: justify;
+}
+
+.popup__submit {
+    padding: 12px 25px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: normal;
+    background-color: #4fd6b9;
+    border: none;
+    border-radius: 6px;
+    align-self: center;
+}
+.popup__submit:hover {
+    cursor: pointer;
+}
+
+.display-none {
+    display: none;
 }

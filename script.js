@@ -67,10 +67,11 @@ let portfolioImages = [{
 const makeRandomArr = (a, b) => Math.random() - 0.5;
 
 
-const createElement = (tagName, className, src, alt) => {
+const createElement = (tagName, classNames, src, alt) => {
     let elem = document.createElement(tagName)
-    if (className) {
-        elem.classList.add(className);
+    if (classNames) {  
+        for (let className of classNames.split(","))
+        elem.classList.add(className.replace(/\s/g,""));
     }
     if (src) {
         elem.src = src
@@ -179,8 +180,8 @@ const validateField = elem => elem.checkValidity();
 contactFormSubmit.addEventListener("click", event => {
     if (requiredFields.every(validateField)) {
         event.preventDefault()
-        let subject = contactForm.querySelector(".contact-form__subject").value.trim() == '' ? 'Без темы' : "Тема:<br>" + contactForm.querySelector(".contact-form__subject").value.trim()
-        let details = contactForm.querySelector(".contact-form__details").value.trim() == '' ? 'Без описания' : 'Описание:<br>' + contactForm.querySelector(".contact-form__details").value.trim()
+        let subject = contactForm.querySelector(".contact-form__subject").value.trim() == '' ? 'Without subject' : "Subject:<br>" + contactForm.querySelector(".contact-form__subject").value.trim()
+        let details = contactForm.querySelector(".contact-form__details").value.trim() == '' ? 'Without description' : 'Description:<br>' + contactForm.querySelector(".contact-form__details").value.trim()
         popup.classList.toggle("display-none")
         popup.querySelector(".popup__subject").innerHTML = subject;
         popup.querySelector(".popup__details").innerHTML = details;

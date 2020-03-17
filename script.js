@@ -69,9 +69,9 @@ const makeRandomArr = (a, b) => Math.random() - 0.5;
 
 const createElement = (tagName, classNames, src, alt) => {
     let elem = document.createElement(tagName)
-    if (classNames) {  
+    if (classNames) {
         for (let className of classNames.split(","))
-        elem.classList.add(className.replace(/\s/g,""));
+            elem.classList.add(className.replace(/\s/g, ""));
     }
     if (src) {
         elem.src = src
@@ -174,22 +174,18 @@ showSlide(slideIndex);
 
 let popup = document.querySelector(".popup")
 let contactForm = document.querySelector(".contact-form")
-let contactFormSubmit = contactForm.querySelector(".contact-form__submit");
-let requiredFields = Array.from(contactForm.querySelectorAll("input[required]"))
-const validateField = elem => elem.checkValidity();
-contactFormSubmit.addEventListener("click", event => {
-    if (requiredFields.every(validateField)) {
-        event.preventDefault()
-        let subject = contactForm.querySelector(".contact-form__subject").value.trim() == '' ? 'Without subject' : "Subject:<br>" + contactForm.querySelector(".contact-form__subject").value.trim()
-        let details = contactForm.querySelector(".contact-form__details").value.trim() == '' ? 'Without description' : 'Description:<br>' + contactForm.querySelector(".contact-form__details").value.trim()
-        popup.classList.toggle("display-none")
-        popup.querySelector(".popup__subject").innerHTML = subject;
-        popup.querySelector(".popup__details").innerHTML = details;
-        let submit = popup.querySelector(".popup__submit");
-        submit.addEventListener("click", evt => {
-            evt.preventDefault;
-            popup.classList.add("display-none")
-        })
-    }
+contactForm.addEventListener("submit", event => {
+    event.preventDefault()
+    let subject = contactForm.querySelector(".contact-form__subject").value.trim() == '' ? 'Without subject' : "Subject:<br>" + contactForm.querySelector(".contact-form__subject").value.trim()
+    let details = contactForm.querySelector(".contact-form__details").value.trim() == '' ? 'Without description' : 'Description:<br>' + contactForm.querySelector(".contact-form__details").value.trim()
+    popup.classList.toggle("display-none")
+    popup.querySelector(".popup__subject").innerHTML = subject;
+    popup.querySelector(".popup__details").innerHTML = details;
+    let submit = popup.querySelector(".popup__submit");
+    submit.addEventListener("click", evt => {
+        evt.preventDefault;
+        popup.classList.add("display-none")
+    })
+
 })
 

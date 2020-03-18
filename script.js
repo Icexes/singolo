@@ -184,6 +184,7 @@ contactForm.addEventListener("submit", event => {
     let submit = popup.querySelector(".popup__submit");
     submit.addEventListener("click", evt => {
         evt.preventDefault;
+        contactForm.reset()
         popup.classList.add("display-none")
     })
 

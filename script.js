@@ -141,34 +141,51 @@ sliderContent.addEventListener("click", event => {
     //For slider 
 
     if (event.target.closest(".slider__arrow-right")) {
-        moveSlide(1);
+        if (isEnabled) {
+            previousSlide(currentSlide);
+        }
     }
     if (event.target.closest(".slider__arrow-left")) {
-        moveSlide(-1);
+        if (isEnabled) {
+            nextSlide(currentSlide);
+        }
     }
 
 })
 
-const moveSlide = key => {
-    key == 1 ? showSlide(slideIndex += 1) : showSlide(slideIndex -= 1);
-    sliderContent.classList.toggle("background-blue");
-    sliderContent.classList.add("background-delay-visible")
+let currentSlide = 0;
+let isEnabled = true;
+
+const previousSlide = n => {
+    hideItem('to-right');
+    changecurrentSlide(n - 1);
+    showSlide('from-left');
 }
 
-const showSlide = position => {
-    let slides = document.querySelectorAll(".slide");
-    if (position > slides.length) {
-        slideIndex = 1;
-    }
-    if (position < 1) {
-        slideIndex = slides.length;
-    }
-    Array.from(slides).map(el => el.classList.add("display-none"))
-    slides[slideIndex - 1].classList.remove("display-none");
+const nextSlide = n => {
+    hideItem('to-left');
+    changecurrentSlide(n + 1);
+    showSlide('from-right');
+}
+const changecurrentSlide = n => currentSlide = (n + slides.length) % slides.length;
+
+
+function hideItem(direction) {
+    isEnabled = false;
+    slides[currentSlide].classList.add(direction);
+    slides[currentSlide].addEventListener('animationend', function () {
+        this.classList.remove('slide--active', direction);
+    });
 }
 
-let slideIndex = 1;
-showSlide(slideIndex);
+function showSlide(direction) {
+    slides[currentSlide].classList.add('slide--next', direction);
+    slides[currentSlide].addEventListener('animationend', function () {
+        this.classList.remove('slide--next', direction);
+        this.classList.add('slide--active');
+        isEnabled = true;
+    });
+}
 
 
 

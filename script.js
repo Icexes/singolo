@@ -1,19 +1,3 @@
-let menuLinkList = document.querySelector(".desktop-menu__list")
-let menuLinks = menuLinkList.querySelectorAll(".desktop-menu__link")
-menuLinkList.addEventListener("click", event => {
-    if (event.target.tagName == 'A') {
-        for (let link of menuLinks) {
-            if (link.classList.contains("desktop-menu__link--active")) {
-                link.classList.remove("desktop-menu__link--active")
-                break;
-            }
-        }
-        event.target.classList.add("desktop-menu__link--active")
-    }
-})
-
-
-
 let portfolioImages = [{
     "src": "assets/images/portfolio/img-1.png",
     "alt": "img 1"
@@ -63,6 +47,36 @@ let portfolioImages = [{
     "alt": "img 12"
 },
 ]
+
+let menuLinkList = document.querySelector(".desktop-menu__list")
+let menuLinks = menuLinkList.querySelectorAll(".desktop-menu__link")
+let categories = document.querySelectorAll("main > *")
+
+document.addEventListener("scroll", function() {
+    let currentPosition = window.scrollY
+    
+    categories.forEach(category => {
+        console.log(currentPosition, "cur")
+        console.log(category.offsetTop, "top")
+        console.log(category.offsetHeight,"hight")
+        if (category.offsetTop<=currentPosition+94 && category.offsetTop+category.offsetHeight > currentPosition) {
+            menuLinks.forEach(link => {
+                link.classList.remove("desktop-menu__link--active")
+                if (link.getAttribute("href").slice(1)==category.getAttribute("id")) {
+                    link.classList.add("desktop-menu__link--active")
+                }
+            }) 
+        }
+        if (document.documentElement.scrollHeight - document.documentElement.clientHeight<=currentPosition) {
+
+            menuLinks[menuLinks.length-2].classList.remove("desktop-menu__link--active")
+            menuLinks[menuLinks.length-1].classList.add("desktop-menu__link--active")
+            }
+        }
+    )
+       
+    }) 
+
 
 const makeRandomArr = (a, b) => Math.random() - 0.5;
 
@@ -142,12 +156,12 @@ sliderContent.addEventListener("click", event => {
 
     if (event.target.closest(".slider__arrow-right")) {
         if (isEnabled) {
-            previousSlide(currentSlide);
+            nextSlide(currentSlide);
         }
     }
     if (event.target.closest(".slider__arrow-left")) {
         if (isEnabled) {
-            nextSlide(currentSlide);
+            previousSlide(currentSlide);
         }
     }
 

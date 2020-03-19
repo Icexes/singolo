@@ -26,8 +26,9 @@ a {
 }
 
 .header {
-    position: sticky;
-    top: 0;
+    position: fixed;
+    width: 100%;
+    
     z-index: 5;
 }
 
@@ -110,6 +111,9 @@ a {
     color: #494e62;
 }
 
+.slider {
+    padding-top: 94px;
+}
 .slider__content {
     margin: 0 auto;
     width: 1020px;
@@ -122,15 +126,14 @@ a {
 .slider__arrow-right {
     position: absolute;
     z-index: 4;
+    top: calc(50% - 19px);
 }
 
 .slider__arrow-left {
-    top: calc(50% - 19px);
     left: 42px;
 }
 
 .slider__arrow-right {
-    top: calc(50% - 19px);
     right: 40px;
 }
 
@@ -342,7 +345,7 @@ a {
     width: 1020px;
     height: 500px;
     border-bottom: 6px solid #fff;
-    scroll-margin-top: 95px;
+    scroll-margin-top: 94px;
 }
 
 .services__caption {
@@ -450,7 +453,7 @@ span.hours {
 /* 2nd part */
 
 .portfolio {
-    scroll-margin-top: 95px;
+    scroll-margin-top: 94px;
 }
 
 .portfolio__content {
@@ -545,7 +548,7 @@ span.hours {
 }
 
 .about-us {
-    scroll-margin-top: 95px;
+    scroll-margin-top: 93px;
 }
 
 .about-us__content {

@@ -56,9 +56,7 @@ document.addEventListener("scroll", function () {
     let currentPosition = window.scrollY
 
     categories.forEach(category => {
-        console.log(currentPosition, "cur")
-        console.log(category.offsetTop, "top")
-        console.log(category.offsetHeight, "hight")
+
         if (category.offsetTop <= currentPosition + 94 && category.offsetTop + category.offsetHeight > currentPosition) {
             menuLinks.forEach(link => {
                 link.classList.remove("desktop-menu__link--active")
@@ -119,7 +117,7 @@ portfolioFilter.addEventListener("click", event => {
         for (let item of items) {
 
             item.classList.remove("filter__item--active");
-
+            
         }
         portfolioGallery.innerHTML = "";
         for (let img of shuffle(portfolioImages)) {
@@ -141,7 +139,6 @@ portfolioGallery.addEventListener("click", event => {
             }
         }
         event.target.classList.add("gallery__img--active");
-
     }
 })
 
@@ -159,7 +156,6 @@ sliderContent.addEventListener("click", event => {
         return;
     }
 
-    //For slider 
 
     if (event.target.closest(".slider__arrow-right")) {
         if (isEnabled) {
@@ -190,7 +186,6 @@ const nextSlide = n => {
 }
 const changecurrentSlide = n => currentSlide = (n + slides.length) % slides.length;
 
-
 function hideItem(direction) {
     isEnabled = false;
     slides[currentSlide].classList.add(direction);
@@ -207,8 +202,6 @@ function showSlide(direction) {
         isEnabled = true;
     });
 }
-
-
 
 let popup = document.querySelector(".popup")
 let contactForm = document.querySelector(".contact-form")

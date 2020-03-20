@@ -52,34 +52,41 @@ let menuLinkList = document.querySelector(".desktop-menu__list")
 let menuLinks = menuLinkList.querySelectorAll(".desktop-menu__link")
 let categories = document.querySelectorAll("main > *")
 
-document.addEventListener("scroll", function() {
+document.addEventListener("scroll", function () {
     let currentPosition = window.scrollY
-    
+
     categories.forEach(category => {
         console.log(currentPosition, "cur")
         console.log(category.offsetTop, "top")
-        console.log(category.offsetHeight,"hight")
-        if (category.offsetTop<=currentPosition+94 && category.offsetTop+category.offsetHeight > currentPosition) {
+        console.log(category.offsetHeight, "hight")
+        if (category.offsetTop <= currentPosition + 94 && category.offsetTop + category.offsetHeight > currentPosition) {
             menuLinks.forEach(link => {
                 link.classList.remove("desktop-menu__link--active")
-                if (link.getAttribute("href").slice(1)==category.getAttribute("id")) {
+                if (link.getAttribute("href").slice(1) == category.getAttribute("id")) {
                     link.classList.add("desktop-menu__link--active")
                 }
-            }) 
+            })
         }
-        if (document.documentElement.scrollHeight - document.documentElement.clientHeight<=currentPosition) {
+        if (document.documentElement.scrollHeight - document.documentElement.clientHeight <= currentPosition) {
 
-            menuLinks[menuLinks.length-2].classList.remove("desktop-menu__link--active")
-            menuLinks[menuLinks.length-1].classList.add("desktop-menu__link--active")
-            }
+            menuLinks[menuLinks.length - 2].classList.remove("desktop-menu__link--active")
+            menuLinks[menuLinks.length - 1].classList.add("desktop-menu__link--active")
         }
+    }
     )
-       
-    }) 
 
+})
 
-const makeRandomArr = (a, b) => Math.random() - 0.5;
-
+const shuffle = arr => {
+    let j, temp;
+    for (let i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = temp;
+    }
+    return arr;
+}
 
 const createElement = (tagName, classNames, src, alt) => {
     let elem = document.createElement(tagName)
@@ -115,7 +122,7 @@ portfolioFilter.addEventListener("click", event => {
 
         }
         portfolioGallery.innerHTML = "";
-        for (let img of portfolioImages.slice().sort(makeRandomArr)) {
+        for (let img of shuffle(portfolioImages)) {
 
             portfolioGallery.append(createElement("img", "gallery__img", img.src, img.alt))
         }

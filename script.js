@@ -51,7 +51,21 @@ let portfolioImages = [{
 let menuLinkList = document.querySelector(".desktop-menu__list")
 let menuLinks = menuLinkList.querySelectorAll(".desktop-menu__link")
 let categories = document.querySelectorAll("main > *")
+let headerContent = document.querySelector(".header__content")
+let mobileMenu = document.querySelector(".mobile-menu")
+let mobileMenuLinks = document.querySelectorAll(".mobile-menu__link")
+let mobileMenuButton = document.querySelector(".mobile-menu__button")
+let logo = document.querySelector(".logo")
 
+
+headerContent.addEventListener("click", function() {
+
+    if (event.target.closest(".mobile-menu__button")) {
+    mobileMenu.classList.toggle("mobile-menu--active")
+    logo.classList.toggle("logo--left")
+    mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
+    }
+})
 document.addEventListener("scroll", function () {
     let currentPosition = window.scrollY
 
@@ -64,11 +78,26 @@ document.addEventListener("scroll", function () {
                     link.classList.add("desktop-menu__link--active")
                 }
             })
+
+            mobileMenuLinks.forEach(link => {
+                link.classList.remove("mobile-menu__link--active")
+                if (link.getAttribute("href").slice(1) == category.getAttribute("id")) {
+                    link.classList.add("mobile-menu__link--active")
+                }
+            })
+
+
+
+
+
         }
         if (document.documentElement.scrollHeight - document.documentElement.clientHeight <= currentPosition) {
 
             menuLinks[menuLinks.length - 2].classList.remove("desktop-menu__link--active")
             menuLinks[menuLinks.length - 1].classList.add("desktop-menu__link--active")
+
+            mobileMenuLinks[mobileMenuLinks.length - 2].classList.remove("desktop-menu__link--active")
+            mobileMenuLinks[mobileMenuLinks.length - 1].classList.add("desktop-menu__link--active")
         }
     }
     )
@@ -221,7 +250,10 @@ contactForm.addEventListener("submit", event => {
 
 })
 
-let mobileMenuButton = document.querySelector(".mobile-menu__button")
-mobileMenuButton.addEventListener("click", function() {
-    mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
-})
+
+
+
+
+
+
+

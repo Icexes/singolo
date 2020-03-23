@@ -117,7 +117,7 @@ portfolioFilter.addEventListener("click", event => {
         for (let item of items) {
 
             item.classList.remove("filter__item--active");
-            
+
         }
         portfolioGallery.innerHTML = "";
         for (let img of shuffle(portfolioImages)) {
@@ -207,11 +207,11 @@ let popup = document.querySelector(".popup")
 let contactForm = document.querySelector(".contact-form")
 contactForm.addEventListener("submit", event => {
     event.preventDefault()
-    let subject = contactForm.querySelector(".contact-form__subject").value.trim() == '' ? 'Without subject' : "Subject:<br>" + contactForm.querySelector(".contact-form__subject").value.trim()
-    let details = contactForm.querySelector(".contact-form__details").value.trim() == '' ? 'Without description' : 'Description:<br>' + contactForm.querySelector(".contact-form__details").value.trim()
+    let subject = contactForm.querySelector(".contact-form__subject").value.trim() == '' ? 'Without subject' : "Subject:" + contactForm.querySelector(".contact-form__subject").value.trim()
+    let details = contactForm.querySelector(".contact-form__details").value.trim() == '' ? 'Without description' : 'Description:' + contactForm.querySelector(".contact-form__details").value.trim()
     popup.classList.toggle("display-none")
-    popup.querySelector(".popup__subject").innerHTML = subject;
-    popup.querySelector(".popup__details").innerHTML = details;
+    popup.querySelector(".popup__subject").textContent = subject;
+    popup.querySelector(".popup__details").textContent = details;
     let submit = popup.querySelector(".popup__submit");
     submit.addEventListener("click", evt => {
         evt.preventDefault;

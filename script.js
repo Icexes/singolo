@@ -221,7 +221,7 @@ contactForm.addEventListener("submit", event => {
 
 })
 
-let mobileMenuButtom = document.querySelector(".mobile-menu__button")
-burgMenu.addEventListener("click", function() {
-    mobileMenuButtom.classList.toggle("mobile-menu__button--rotate")
+let mobileMenuButton = document.querySelector(".mobile-menu__button")
+mobileMenuButton.addEventListener("click", function() {
+    mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
 })

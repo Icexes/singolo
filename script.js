@@ -176,11 +176,11 @@ let slides = sliderContent.querySelectorAll(".slide")
 let arrows = sliderContent.querySelectorAll(".arrow")
 sliderContent.addEventListener("click", event => {
 
-    if (event.target.closest(".phone-horizontal__base")) {
+    if (event.target.closest(".phone-horizontal__base") || event.target.closest(".phone-horizontal__screen")) {
         sliderContent.querySelector(".phone-horizontal__screen").classList.toggle("display-none")
         return;
     }
-    if (event.target.closest(".phone-vertical__base")) {
+    if (event.target.closest(".phone-vertical__base") || event.target.closest(".phone-vertical__screen")) {
         sliderContent.querySelector(".phone-vertical__screen").classList.toggle("display-none")
         return;
     }

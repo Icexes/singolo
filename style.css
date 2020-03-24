@@ -8,7 +8,7 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 
@@ -998,9 +998,23 @@ span.hours {
     .contacts__content {
         width: 100%;
     }
+    .contact-form {
+        width: calc((100% - 20px)*2/3);
+    }
+
+    .contact-information {
+        width: calc((100% - 20px)/3);
+    }
+    .contact-information__description {
+        width: 100%;
+    }
+
 
     .card {
         width: 46%;
+    }
+    .footer__content {
+        width: 100%;
     }
 
     .card__text {
@@ -1027,6 +1041,9 @@ span.hours {
 
     .header__content {
         width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        height: 71px;
     }
 
     .slider__content {
@@ -1049,12 +1066,6 @@ span.hours {
         width: 100%;
     }
 
-    .header__content {
-        /* justify-content: center; */
-        align-items: center;
-        height: 71px;
-    }
-
     .logo {
         position:relative;
         z-index:5;
@@ -1067,6 +1078,13 @@ span.hours {
 
     .card {
         min-width: 100%;
+    }
+    .footer__content {
+        width: 100%;
+        justify-content: center;
+    }
+    .footer__copyrights {
+        display:none;
     }
 
     .card__text {
@@ -1100,6 +1118,29 @@ span.hours {
         margin-bottom: 20px;
     }
 
+
+    .contacts__info {
+        flex-direction: column;
+    }
+
+    .contact-form {
+        width:100%;
+        margin-bottom:32px;
+    }
+    .contact-information {
+        width: 100%;
+    }
+
+    .contact-form__name, .contact-form__email, .contact-form__subject, .contact-form__details {
+        margin-bottom: 12px;
+    }
+    .contact-form__submit {
+        width:100%;
+    }
+
+
+
+
     .mobile-menu {
         display: block;
     }
@@ -1118,7 +1159,7 @@ span.hours {
     }
 
     .logo {
-        margin: 0 auto;
+        margin-left: 40%;
         
     }
 
@@ -1128,6 +1169,14 @@ span.hours {
     }
 
 }
+
+
+
+
+
+
+
+
 
 
 .mobile-menu__button--rotate {
@@ -1160,7 +1209,7 @@ span.hours {
 }
 
 .logo--left {
-
+    margin-left: 70px;
 }
 
 .mobile-menu__item {

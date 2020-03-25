@@ -1039,7 +1039,8 @@ span.hours {
     }
 
     .slide__wrap {
-        width: 77.72vw;
+        /* width: 77.72vw; */
+        width: 78vw;
         height: 47.352vw;
     }
 
@@ -1154,21 +1155,27 @@ span.hours {
 
     .portfolio__content {
         width: 100%;
+        padding: 53px 30px 25px 30px;
     }
-
+    .filter {
+        margin-top:16px;
+    }
     .about-us {
+        scroll-margin-top: 71px;
+    }
+    .contacts {
         scroll-margin-top: 71px;
     }
 
     .about-us__content {
         width: 100%;
-        padding:33px 30px 25px 30px;
+        padding:41px 30px 25px 30px;
     }
     .about-us__description {
-        margin-top: 15px;
+        margin-top: 25px;
     }
     .employees {
-        margin-top:15px;
+        margin-top:25px;
     }
 
     .employee-card {
@@ -1181,16 +1188,28 @@ span.hours {
 
     .contacts__content {
         width: 100%;
-        padding: 0 30px 42px 30px;
+        padding: 0 30px 32px 30px;
     }
     .contacts__caption {
-        padding-top:44px;
+        padding-top:54px;
     }
     .contacts__description {
-        margin-top:20px;
+        margin-top:25px;
     }
     .contacts__info {
         margin-top:20px;
+        flex-direction: column;
+    }
+
+ 
+
+    .contact-form {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .contact-information {
+        width: 100%;
     }
     .contact-information__description {
         margin-top:10px;
@@ -1198,7 +1217,9 @@ span.hours {
     .contact-infrormation__adress {
         margin-top: 15px;
     }
-
+    .contact-form__submit {
+        width: 100%;
+    }
 
 
     .cards {
@@ -1229,13 +1250,7 @@ span.hours {
         width: 100%;
     }
 
-    .portfolio__content {
-        padding: 44px 30px 30px 30px;
-    }
 
-    .filter {
-        margin-top:20px;
-    }
     .gallery {
         margin-top: 25px;
     }
@@ -1243,7 +1258,7 @@ span.hours {
         
         width: calc((100% - 13px)/2);
         max-height: 232.59px;
-        margin-bottom:12px;
+        margin-bottom:13px;
     }
 
     .gallery__img:nth-child(n+9) {
@@ -1254,18 +1269,7 @@ span.hours {
 
 
 
-    .contacts__info {
-        flex-direction: column;
-    }
-
-    .contact-form {
-        width: 100%;
-        margin-bottom: 32px;
-    }
-
-    .contact-information {
-        width: 100%;
-    }
+ 
 
     .contact-form__name,
     .contact-form__email,
@@ -1274,9 +1278,7 @@ span.hours {
         margin-bottom: 12px;
     }
 
-    .contact-form__submit {
-        width: 100%;
-    }
+
 
 
 

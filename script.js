@@ -56,6 +56,9 @@ let mobileMenu = document.querySelector(".mobile-menu")
 let mobileMenuLinks = document.querySelectorAll(".mobile-menu__link")
 let mobileMenuButton = document.querySelector(".mobile-menu__button")
 let logo = document.querySelector(".logo")
+let blurBody = document.querySelector(".blur-body")
+
+
 
 
 headerContent.addEventListener("click", function() {
@@ -64,8 +67,18 @@ headerContent.addEventListener("click", function() {
     mobileMenu.classList.toggle("mobile-menu--active")
     logo.classList.toggle("logo--left")
     mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
+    blurBody.classList.toggle("display-none")
     }
 })
+
+blurBody.addEventListener("click",function() {
+    mobileMenu.classList.toggle("mobile-menu--active")
+    logo.classList.toggle("logo--left")
+    mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
+    blurBody.classList.toggle("display-none")
+})
+
+
 document.addEventListener("scroll", function () {
     let currentPosition = window.scrollY
 

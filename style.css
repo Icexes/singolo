@@ -978,21 +978,30 @@ span.hours {
 
     .contacts__content {
         width: 100%;
-    }
+        padding: 0 37px 8px 39px;
 
+    }
     .contact-form {
-        width: calc((100% - 20px)*2/3);
+        width: calc((100% - 29px)*2/3);
+    }
+    .contact-information {
+        width: calc((100% - 29px)/3);
     }
 
-    .contact-information {
-        width: calc((100% - 20px)/3);
+    .contact-form__name, .contact-form__email,
+    .contact-form__subject, .contact-form__details,
+    .contact-form__submit {
+    margin-bottom:12px;
+   
     }
 
     .contact-information__description {
         width: 100%;
     }
 
-
+    .cards {
+        padding-right: 31px;
+    }
     .card {
         width: 46%;
     }
@@ -1092,6 +1101,13 @@ span.hours {
         padding-top: 71px;
     }
 
+    .slider__arrow-left {
+        left: 2.7333%;
+    }
+    .slider__arrow-right {
+        right: 2.5706%;
+    }
+
     .header__content {
         width: 100%;
         justify-content: flex-start;
@@ -1129,6 +1145,7 @@ span.hours {
     .services {
         width: 100%;
         scroll-margin-top: 71px;
+        padding: 25px 29px 0 32px;
     }
 
     .portfolio {
@@ -1145,17 +1162,53 @@ span.hours {
 
     .about-us__content {
         width: 100%;
+        padding:33px 30px 25px 30px;
+    }
+    .about-us__description {
+        margin-top: 15px;
+    }
+    .employees {
+        margin-top:15px;
+    }
+
+    .employee-card {
+        width: 100%;
+        margin-bottom: 29px;
+    }
+    .employee-card .social-links {
+        margin-top:10px;
     }
 
     .contacts__content {
         width: 100%;
+        padding: 0 30px 42px 30px;
+    }
+    .contacts__caption {
+        padding-top:44px;
+    }
+    .contacts__description {
+        margin-top:20px;
+    }
+    .contacts__info {
+        margin-top:20px;
+    }
+    .contact-information__description {
+        margin-top:10px;
+    }
+    .contact-infrormation__adress {
+        margin-top: 15px;
     }
 
 
 
+    .cards {
+        margin-top: 30px;
+        margin-bottom:0px;
+    }
 
     .card {
         min-width: 100%;
+        
     }
 
     .footer__content {
@@ -1177,14 +1230,20 @@ span.hours {
     }
 
     .portfolio__content {
-        padding: 70px 17px 46px 30px;
+        padding: 44px 30px 30px 30px;
     }
 
-
+    .filter {
+        margin-top:20px;
+    }
+    .gallery {
+        margin-top: 25px;
+    }
     .gallery__img {
-        /* width: calc((31%-10px)); */
-        width: calc((100% - 20px)/2);
+        
+        width: calc((100% - 13px)/2);
         max-height: 232.59px;
+        margin-bottom:12px;
     }
 
     .gallery__img:nth-child(n+9) {
@@ -1192,11 +1251,7 @@ span.hours {
 
     }
 
-    .employee-card {
 
-        width: 100%;
-        margin-bottom: 20px;
-    }
 
 
     .contacts__info {

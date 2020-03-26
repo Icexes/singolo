@@ -690,8 +690,8 @@ span.hours {
 .contact-form__name,
 .contact-form__email,
 .contact-form__subject,
-.contact-form__details,
-.contact-form__submit {
+.contact-form__details
+ {
     padding: 12px 15px;
     font: inherit;
     font-size: 12px;
@@ -699,6 +699,18 @@ span.hours {
     background-color: #d6564f;
     border: none;
     border-radius: 6px;
+}
+.contact-form__submit {
+    padding: 12px 52px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    background: #FBC65F;
+    color: #886A30;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .contact-form__name:required:valid,
@@ -713,15 +725,11 @@ span.hours {
     background-color: rgb(142, 76, 185);
 }
 
-.contact-form__submit {
-    color: #f48c8f;
-    cursor: pointer;
-}
+
 
 .contact-form__submit:hover {
 
-    background-color: #666d89;
-    color: #fff;
+    background-color: rgb(224, 153, 11);
 }
 
 .contact-information__caption {

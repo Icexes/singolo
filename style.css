@@ -226,7 +226,6 @@ a {
 .slide-2__phone {
     width: 517px;
     height: 513px;
-    /* justify-self: center; */
 
 }
 
@@ -1106,7 +1105,7 @@ span.hours {
 
     .gallery__img {
         width: calc((100% - 40px) / 3);
-        max-height: 232.59px;
+        max-height:254.7px;
     }
 
     .about-us__content {
@@ -1300,7 +1299,7 @@ span.hours {
     .gallery__img {
 
         width: calc((100% - 13px)/2);
-        max-height: 232.59px;
+        max-height: 290px;
         margin-bottom: 13px;
     }
 

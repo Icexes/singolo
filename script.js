@@ -254,11 +254,11 @@ contactForm.addEventListener("submit", event => {
 
     let subject = contactForm.querySelector(".contact-form__subject").value.trim()
     popup.querySelector(".popup__subject").textContent = subject;
-    let subjectTitle = subject == '' ? 'Without subject' : "Subject:";
+    let subjectTitle = subject == '' ? 'No subject' : "Subject:";
     popup.querySelector(".popup__subject-title").textContent = subjectTitle;
     let details = contactForm.querySelector(".contact-form__details").value.trim()
     popup.querySelector(".popup__details").textContent = details;
-    let detailsTitle = details == '' ? 'Without description' : 'Description:'
+    let detailsTitle = details == '' ? 'No description' : 'Description:'
     popup.querySelector(".popup__details-title").textContent = detailsTitle;
     popup.classList.toggle("display-none")
 

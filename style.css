@@ -917,6 +917,7 @@ span.hours {
 }
 
 .mobile-menu {
+    display:none;
     width: 278px;
     height: 100%;
     position: fixed;
@@ -979,6 +980,7 @@ span.hours {
 }
 
 .blur-body {
+    display:none;
     position: fixed;
     background-color: #2D303A;
     opacity: 0.6;
@@ -992,10 +994,6 @@ span.hours {
 @media screen and (max-width: 1019px) {
     .header__content {
         width: 100%;
-    }
-
-    .mobile-menu {
-        display: none;
     }
 
     .slider__content {
@@ -1177,10 +1175,6 @@ span.hours {
 
     .footer__content {
         width: 100%;
-    }
-
-    .blur-body {
-        display: none;
     }
 
 }

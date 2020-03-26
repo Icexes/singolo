@@ -53,25 +53,33 @@ let menuLinks = menuLinkList.querySelectorAll(".desktop-menu__link")
 let categories = document.querySelectorAll("main > *")
 let headerContent = document.querySelector(".header__content")
 let mobileMenu = document.querySelector(".mobile-menu")
+let mobileMenuList = document.querySelector(".mobile-menu__list")
 let mobileMenuLinks = document.querySelectorAll(".mobile-menu__link")
 let mobileMenuButton = document.querySelector(".mobile-menu__button")
 let logo = document.querySelector(".logo")
 let blurBody = document.querySelector(".blur-body")
 
 
-
-
-headerContent.addEventListener("click", function() {
+headerContent.addEventListener("click", function () {
 
     if (event.target.closest(".mobile-menu__button")) {
-    mobileMenu.classList.toggle("mobile-menu--active")
-    logo.classList.toggle("logo--left")
-    mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
-    blurBody.classList.toggle("display-none")
+        mobileMenu.classList.toggle("mobile-menu--active")
+        logo.classList.toggle("logo--left")
+        mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
+        blurBody.classList.toggle("display-none")
     }
 })
 
-blurBody.addEventListener("click",function() {
+mobileMenuList.addEventListener("click", function () {
+    if (event.target.closest(".mobile-menu__link")) {
+        mobileMenu.classList.toggle("mobile-menu--active")
+        logo.classList.toggle("logo--left")
+        mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
+        blurBody.classList.toggle("display-none")
+    }
+})
+
+blurBody.addEventListener("click", function () {
     mobileMenu.classList.toggle("mobile-menu--active")
     logo.classList.toggle("logo--left")
     mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
@@ -99,16 +107,10 @@ document.addEventListener("scroll", function () {
                 }
             })
 
-
-
-
-
         }
         if (document.documentElement.scrollHeight - document.documentElement.clientHeight <= currentPosition) {
-
             menuLinks[menuLinks.length - 2].classList.remove("desktop-menu__link--active")
             menuLinks[menuLinks.length - 1].classList.add("desktop-menu__link--active")
-
             mobileMenuLinks[mobileMenuLinks.length - 2].classList.remove("desktop-menu__link--active")
             mobileMenuLinks[mobileMenuLinks.length - 1].classList.add("desktop-menu__link--active")
         }
@@ -249,7 +251,7 @@ let popup = document.querySelector(".popup")
 let contactForm = document.querySelector(".contact-form")
 contactForm.addEventListener("submit", event => {
     event.preventDefault()
-    
+
     let subject = contactForm.querySelector(".contact-form__subject").value.trim()
     popup.querySelector(".popup__subject").textContent = subject;
     let subjectTitle = subject == '' ? 'Without subject' : "Subject:";
@@ -259,7 +261,7 @@ contactForm.addEventListener("submit", event => {
     let detailsTitle = details == '' ? 'Without description' : 'Description:'
     popup.querySelector(".popup__details-title").textContent = detailsTitle;
     popup.classList.toggle("display-none")
-    
+
     let submit = popup.querySelector(".popup__submit");
     submit.addEventListener("click", evt => {
         evt.preventDefault;

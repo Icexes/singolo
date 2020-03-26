@@ -865,18 +865,36 @@ span.hours {
     justify-content: space-between;
 }
 
-.popup__subject {
+.popup__caption {
+   
+}
+
+.popup__subject-title {
     margin-top: 10px;
-    max-height: 55px;
+    font-size: 17px;
+    color:rgb(104, 68, 68);
+}
+.popup__details-title {
+    margin-top: 14px;
+    font-size: 17px;
+    color:rgb(104, 68, 68);
+    
+}
+.popup__subject {
+    margin-top: 5px;
+    max-height: 50px;
+    font-size: 14px;
     overflow: hidden;
     word-wrap: wrap;
     text-overflow: ellipsis;
     text-align: justify;
 }
 
+
 .popup__details {
-    margin-top: 10px;
-    max-height: 192px;
+    margin-top: 5px;
+    max-height: 170px;
+    font-size: 14px;
     overflow: hidden;
     word-wrap: wrap;
     text-overflow: ellipsis;
@@ -1185,7 +1203,7 @@ span.hours {
         margin: 0 auto;
         
     }
-    
+
     .logo--left {
         margin-left: 28.5px;
     }

@@ -59,31 +59,28 @@ let mobileMenuButton = document.querySelector(".mobile-menu__button")
 let logo = document.querySelector(".logo")
 let blurBody = document.querySelector(".blur-body")
 
+function toggleMenuClasses() {
+    mobileMenu.classList.toggle("mobile-menu--active")
+        logo.classList.toggle("logo--left")
+        mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
+        blurBody.classList.toggle("display-none")
+}
 
 headerContent.addEventListener("click", function () {
 
     if (event.target.closest(".mobile-menu__button")) {
-        mobileMenu.classList.toggle("mobile-menu--active")
-        logo.classList.toggle("logo--left")
-        mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
-        blurBody.classList.toggle("display-none")
+        toggleMenuClasses();
     }
 })
 
 mobileMenuList.addEventListener("click", function () {
     if (event.target.closest(".mobile-menu__link")) {
-        mobileMenu.classList.toggle("mobile-menu--active")
-        logo.classList.toggle("logo--left")
-        mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
-        blurBody.classList.toggle("display-none")
+        toggleMenuClasses();
     }
 })
 
 blurBody.addEventListener("click", function () {
-    mobileMenu.classList.toggle("mobile-menu--active")
-    logo.classList.toggle("logo--left")
-    mobileMenuButton.classList.toggle("mobile-menu__button--rotate")
-    blurBody.classList.toggle("display-none")
+    toggleMenuClasses();
 })
 
 
@@ -219,16 +216,16 @@ let isEnabled = true;
 
 const previousSlide = n => {
     hideItem('to-right');
-    changecurrentSlide(n - 1);
+    changeCurrentSlide(n - 1);
     showSlide('from-left');
 }
 
 const nextSlide = n => {
     hideItem('to-left');
-    changecurrentSlide(n + 1);
+    changeCurrentSlide(n + 1);
     showSlide('from-right');
 }
-const changecurrentSlide = n => currentSlide = (n + slides.length) % slides.length;
+const changeCurrentSlide = n => currentSlide = (n + slides.length) % slides.length;
 
 function hideItem(direction) {
     isEnabled = false;

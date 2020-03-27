@@ -13,34 +13,74 @@
 <body>
     <header class="header">
         <div class="header__content">
+
+            <button class="mobile-menu__button  button">
+                <span class="mobile-menu__line"></span>
+                <span class="mobile-menu__line"></span>
+                <span class="mobile-menu__line"></span>
+            </button>
+            <div class="mobile-menu">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item"><a href="#home"
+                            class="mobile-menu__link mobile-menu__link--active">Home</a></li>
+                    <li class="mobile-menu__item"><a href="#services" class="mobile-menu__link">Services</a></li>
+                    <li class="mobile-menu__item"><a href="#portfolio" class="mobile-menu__link">Portfolio</a></li>
+                    <li class="mobile-menu__item"><a href="#about-us" class="mobile-menu__link">About</a></li>
+                    <li class="mobile-menu__item"><a href="#contacts" class="mobile-menu__link">Contact</a></li>
+                </ul>
+            </div>
             <div class="logo">
-                <h1 class="logo__name"><a href="#" class="logo__link">Singolo</a></h1>
+                <a href="#home" class="logo__link">
+                    <h1 class="logo__name">Singolo</h1>
+                </a>
             </div>
             <nav class="desktop-menu">
                 <ul class="desktop-menu__list">
-                    <li class="desktop-menu__item"><a href="#"
-                            class="desktop-menu__link">Home</a></li>
-                    <li class="desktop-menu__item"><a href="#" class="desktop-menu__link">Services</a></li>
-                    <li class="desktop-menu__item"><a href="#" class="desktop-menu__link">Portfolio</a></li>
-                    <li class="desktop-menu__item"><a href="#" class="desktop-menu__link">About</a></li>
-                    <li class="desktop-menu__item"><a href="#" class="desktop-menu__link">Contact</a></li>
+                    <li class="desktop-menu__item"><a href="#home"
+                            class="desktop-menu__link desktop-menu__link--active">Home</a></li>
+                    <li class="desktop-menu__item"><a href="#services" class="desktop-menu__link">Services</a></li>
+                    <li class="desktop-menu__item"><a href="#portfolio" class="desktop-menu__link">Portfolio</a></li>
+                    <li class="desktop-menu__item"><a href="#about-us" class="desktop-menu__link">About</a></li>
+                    <li class="desktop-menu__item"><a href="#contacts" class="desktop-menu__link">Contact</a></li>
                 </ul>
+            </nav>
+
         </div>
 
     </header>
+
     <main>
-        <article class="slider">
+        <article class="slider" id="home">
             <div class="slider__content">
-                <div class="slider__arrow-left">
+                <div class="slider__arrow-left arrow">
                     <a href="#"><img src="./assets/images/arrow.png" alt="arrow-left"></a>
                 </div>
-                <div class="slider__phone-vertical">
-                    <img src="./assets/images/phone-vertical.png" alt="phone">
+                <div class="slides">
+                    <div class="slide-1 slide slide--active">
+                        <div class="slide__container">
+                            <div class="slide__wrap">
+                                <div class="phone-vertical">
+                                    <img src="./assets/images/phone-vertical-base.png" class="phone-vertical__base">
+                                    <img src="./assets/images/phone-vertical-screen.png" class="phone-vertical__screen">
+                                    <img src="./assets/images/phone-vertical-shadow.png" class="phone-vertical__shadow">
+                                </div>
+                                <div class="phone-horizontal">
+                                    <img src="./assets/images/phone-horizontal-base.png" class="phone-horizontal__base">
+                                    <img src="./assets/images/phone-horizontal-screen.png"
+                                        class="phone-horizontal__screen">
+                                    <img src="./assets/images/phone-horizontal-shadow.png"
+                                        class="phone-horizontal__shadow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-2 slide slide--active">
+                        <div class="slide__container slide__container--content-center">
+                            <img src="./assets/images/phone-slide-2.png" class="slide-2__phone">
+                        </div>
+                    </div>
                 </div>
-                <div class="slider__phone-horizontal">
-                    <img src="./assets/images/phone-horizontal.png" alt="phone">
-                </div>
-                <div class="slider__arrow-right">
+                <div class="slider__arrow-right arrow">
                     <a href="#"><img src="./assets/images/arrow.png" alt="phone"></a>
                 </div>
 
@@ -48,7 +88,7 @@
             </div>
 
         </article>
-        <section class="services">
+        <section class="services" id="services">
             <h1 class="services__caption">Our Services</h1>
             <p class="services__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
                 mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus,
@@ -113,37 +153,25 @@
         </section>
 
 
-<!-- 2nd part -->
-        <section class="portfolio">
+        <!-- 2nd part -->
+        <section class="portfolio" id="portfolio">
             <div class="portfolio__content">
                 <h1 class="portfolio__caption">Portfolio</h1>
                 <p class="portfolio__description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
                     lacinia odio sem nec elit.</p>
 
                 <ul class="filter">
-                    <li class="filter-item">All</li>
-                    <li class="filter-item">Web Design</li>
-                    <li class="filter-item">Graphic Design</li>
-                    <li class="filter-item">Artwork</li>
+                    <li class="filter__item filter__item--active">All</li>
+                    <li class="filter__item ">Web Design</li>
+                    <li class="filter__item">Graphic Design</li>
+                    <li class="filter__item">Artwork</li>
                 </ul>
 
                 <div class="gallery">
-                    <img src="assets/images/portfolio/img-1.png" class="gallery__img" alt="img-1">
-                    <img src="assets/images/portfolio/img-2.png" class="gallery__img" alt="img-2">
-                    <img src="assets/images/portfolio/img-3.png" class="gallery__img" alt="img-3">
-                    <img src="assets/images/portfolio/img-4.png" class="gallery__img" alt="img-4">
-                    <img src="assets/images/portfolio/img-5.png" class="gallery__img" alt="img-5">
-                    <img src="assets/images/portfolio/img-6.png" class="gallery__img" alt="img-6">
-                    <img src="assets/images/portfolio/img-7.png" class="gallery__img" alt="img-7">
-                    <img src="assets/images/portfolio/img-8.png" class="gallery__img" alt="img-8">
-                    <img src="assets/images/portfolio/img-9.png" class="gallery__img" alt="img-9">
-                    <img src="assets/images/portfolio/img-10.png" class="gallery__img" alt="img-10">
-                    <img src="assets/images/portfolio/img-11.png" class="gallery__img" alt="img-11">
-                    <img src="assets/images/portfolio/img-12.png" class="gallery__img" alt="img-12">
                 </div>
             </div>
         </section>
-        <section class="about-us">
+        <section class="about-us" id="about-us">
             <div class="about-us__content">
                 <h1 class="about-us__caption">About Us</h1>
                 <p class="about-us__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
@@ -161,12 +189,13 @@
                             purus, nec rutrum tellus dolor id lorem.</p>
                         <div class="social-links">
                             <a href="#"><img src="assets/images/socials/Facebook.png" alt="facebook"
-                                class="social-links__facebook"></a>
-                        <a href="#"><img src="assets/images/socials/Google.png" alt="google" class="social-links__google"></a>
-                        <a href="#"> <img src="assets/images/socials/Twitter.png" alt="twitter"
-                                class="social-links__twitter"></a>
-                        <a href="#"> <img src="assets/images/socials/LinkedIn.png" alt="linkedin"
-                                class="social-links__linkedin"></a>
+                                    class="social-links__facebook"></a>
+                            <a href="#"><img src="assets/images/socials/Google.png" alt="google"
+                                    class="social-links__google"></a>
+                            <a href="#"> <img src="assets/images/socials/Twitter.png" alt="twitter"
+                                    class="social-links__twitter"></a>
+                            <a href="#"> <img src="assets/images/socials/LinkedIn.png" alt="linkedin"
+                                    class="social-links__linkedin"></a>
                         </div>
                     </div>
 
@@ -179,12 +208,13 @@
                             laoreet, viverra lacus ut, ultrices velit.</p>
                         <div class="social-links">
                             <a href="#"><img src="assets/images/socials/Facebook.png" alt="facebook"
-                                class="social-links__facebook"></a>
-                        <a href="#"><img src="assets/images/socials/Google.png" alt="google" class="social-links__google"></a>
-                        <a href="#"> <img src="assets/images/socials/Twitter.png" alt="twitter"
-                                class="social-links__twitter"></a>
-                        <a href="#"> <img src="assets/images/socials/LinkedIn.png" alt="linkedin"
-                                class="social-links__linkedin"></a>
+                                    class="social-links__facebook"></a>
+                            <a href="#"><img src="assets/images/socials/Google.png" alt="google"
+                                    class="social-links__google"></a>
+                            <a href="#"> <img src="assets/images/socials/Twitter.png" alt="twitter"
+                                    class="social-links__twitter"></a>
+                            <a href="#"> <img src="assets/images/socials/LinkedIn.png" alt="linkedin"
+                                    class="social-links__linkedin"></a>
                         </div>
                     </div>
 
@@ -198,12 +228,13 @@
                             et consequat felis. Quisque condimentum.</p>
                         <div class="social-links">
                             <a href="#"><img src="assets/images/socials/Facebook.png" alt="facebook"
-                                class="social-links__facebook"></a>
-                        <a href="#"><img src="assets/images/socials/Google.png" alt="google" class="social-links__google"></a>
-                        <a href="#"> <img src="assets/images/socials/Twitter.png" alt="twitter"
-                                class="social-links__twitter"></a>
-                        <a href="#"> <img src="assets/images/socials/LinkedIn.png" alt="linkedin"
-                                class="social-links__linkedin"></a>
+                                    class="social-links__facebook"></a>
+                            <a href="#"><img src="assets/images/socials/Google.png" alt="google"
+                                    class="social-links__google"></a>
+                            <a href="#"> <img src="assets/images/socials/Twitter.png" alt="twitter"
+                                    class="social-links__twitter"></a>
+                            <a href="#"> <img src="assets/images/socials/LinkedIn.png" alt="linkedin"
+                                    class="social-links__linkedin"></a>
                         </div>
                     </div>
                 </div>
@@ -211,38 +242,42 @@
         </section>
 
         <!-- 3td part -->
-        <section class="contacts">
-        <div class="contacts__content">
-            <h1 class="contacts__caption">Get a Quote</h1>
-            <p class="contacts__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
-                mollis,
-                non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac
-                cursus commodo, tortor mauris condimentum nibh.</p>
-            <div class="contacts__info">
-                <form class="contact-form" method="POST" action="#">
-                    <input type="text" class="contact-form__name" placeholder="Name (Required)" name="name"
-                        pattern="[A-Za-zА-Яа-яЁё]{3,}\s?([A-Za-zА-Яа-яЁё]{3,})?" required>
-                    <input type="email" class="contact-form__email" placeholder="Email (Required)" name="email"
-                        pattern="^[a-z0-9]{3,16}@[a-z]{3,6}\.[a-z]{2,4}$" required>
-                    <input type="text" class="contact-form__subject" placeholder="Subject" name="Subject">
-                    <textarea class="contact-form__details" placeholder="Describe your project in detail..."></textarea>
-                    <button class="contact-form__submit" type="submit">Submit</button>
-                </form>
-                <div class="contact-information">
-                    <h3 class="contact-information__caption">Contact Information</h3>
-                    <p class="contact-information__description">Quisque hendrerit purus dapibus, ornare nibh vitae,
-                        viver&shy; ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc
-                        et
-                        tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
-                    </p>
+        <section class="contacts" id="contacts">
+            <div class="contacts__content">
+                <h1 class="contacts__caption">Get a Quote</h1>
+                <p class="contacts__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
+                    Duis
+                    mollis,
+                    non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus,
+                    tellus ac
+                    cursus commodo, tortor mauris condimentum nibh.</p>
+                <div class="contacts__info">
+                    <form class="contact-form" method="POST" action="#">
+                        <input type="text" class="contact-form__name" placeholder="Name (Required)" name="name"
+                            pattern="[A-Za-zА-Яа-яЁё]{3,}\s?([A-Za-zА-Яа-яЁё]{3,})?" required>
+                        <input type="email" class="contact-form__email" placeholder="Email (Required)" name="email"
+                            pattern="^[a-z0-9]{3,16}@[a-z]{3,6}\.[a-z]{2,4}$" required>
+                        <input type="text" class="contact-form__subject" placeholder="Subject" name="Subject">
+                        <textarea class="contact-form__details"
+                            placeholder="Describe your project in detail..."></textarea>
+                        <button class="contact-form__submit" type="submit">SEND</button>
+                    </form>
+                    <div class="contact-information">
+                        <h3 class="contact-information__caption">Contact Information</h3>
+                        <p class="contact-information__description">Quisque hendrerit purus dapibus, ornare nibh vitae,
+                            viver&shy; ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed
+                            nunc
+                            et
+                            tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
+                        </p>
 
-                    <a class="contact-infrormation__adress">Elm St. 14/05 Lost City </a>
-                    <a href="tel:035283318635" class="contact-information__phone">03528 331 86 35</a>
-                    <a href="mailto:info@singolo.com" class="contact-information__email">info@singolo.com</a>
+                        <a class="contact-infrormation__adress">Elm St. 14/05 Lost City </a>
+                        <a href="tel:035283318635" class="contact-information__phone">03528 331 86 35</a>
+                        <a href="mailto:info@singolo.com" class="contact-information__email">info@singolo.com</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </main>
     <footer class="footer">
         <div class="footer__content">
@@ -258,9 +293,21 @@
             </div>
         </div>
     </footer>
+    <div class="popup display-none">
+        <div class="popup__content">
+            <div class="popup__text-content">
+                <h3 class="popup__caption">The letter was sent</h3>
+                <p class="popup__subject-title"></p>
+                <p class="popup__subject"></p>
+                <p class="popup__details-title"></p>
+                <p class="popup__details"></p>
+            </div>
+            <button class="popup__submit">Ok</button>
+        </div>
+    </div>
+    <div class="blur-body display-none"></div>
 
-
-
+    <script src="script.js"></script>
 </body>
 
 </html>
